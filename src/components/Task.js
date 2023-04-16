@@ -18,7 +18,9 @@ const Task = ({ task, onDelete, onToggle }) => {
             color: 'red',
             cursor: 'pointer',
           }}
-          onClick={() => onDelete(task.id)}
+          onClick={() => {
+            if (window.confirm('Are you sure?')) onDelete(task.id);
+          }}
         />
       </h3>
       <h5>Email: {task.email}</h5>
